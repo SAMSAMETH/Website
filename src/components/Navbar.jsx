@@ -47,7 +47,7 @@ export default function Navbar() {
           <div>
             {/* ✅ Changed gradient to rich burgundy tones */}
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-[#4A0E0E] via-[#7B1E1E] to-[#B03030] text-transparent bg-clip-text tracking-tight leading-tight">
-              Ziterate
+              Zercadia
             </h1>
             <p className="text-sm text-gray-500 italic font-medium mt-0.5">
               Evolving Innovation

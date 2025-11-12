@@ -23,7 +23,7 @@ export default function HomePage() {
           </span>{" "}
           with <br />
           <span className="bg-gradient-to-r from-[#B03030] via-[#7B1E1E] to-[#4A0E0E] text-transparent bg-clip-text">
-            Ziterate
+            Zercadia
           </span>
         </motion.h2>
 
