@@ -1,15 +1,15 @@
-
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
-    <div className="font-sans bg-gradient-to-b from-[#ffffff] to-[#f9fafb] min-h-screen text-gray-800">
+    <div className="font-sans bg-gradient-to-b from-[#faf2f5] via-[#f1ecff] to-[#dbe0f3] min-h-screen text-gray-800">
       <Navbar />
 
       {/* Hero Section */}
       <section className="pt-40 flex flex-col items-center justify-center text-center min-h-screen px-6">
+        
         {/* Headline */}
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -56,7 +56,7 @@ export default function HomePage() {
             Get Started
           </Link>
 
-          {/* Burgundy Outline CTA — full gradient fill on hover */}
+          {/* Burgundy Outline CTA */}
           <Link
             to="/about"
             className="border-2 border-[#7B1E1E] text-[#7B1E1E] px-8 py-3 rounded-lg font-semibold
@@ -71,3 +71,4 @@ export default function HomePage() {
     </div>
   );
 }
+

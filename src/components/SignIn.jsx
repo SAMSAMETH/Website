@@ -59,7 +59,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+      <div className="font-sans bg-gradient-to-b from-[#faf2f5] via-[#f1ecff] to-[#dbe0f3] min-h-screen text-gray-800 flex flex-col">
       <Navbar />
 
       <div className="flex flex-1 items-center justify-center px-4 py-10">

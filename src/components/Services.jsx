@@ -64,7 +64,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 relative">
+    <div className="font-sans bg-gradient-to-b from-[#faf2f5] via-[#f1ecff] to-[#dbe0f3] min-h-screen text-gray-800">
       <Navbar />
 {/* 🌟 Page Header */}
 <div className="text-center pt-32 pb-16 px-6 md:px-12">

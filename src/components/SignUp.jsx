@@ -67,7 +67,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
+    <div className="font-sans bg-gradient-to-b from-[#faf2f5] via-[#f1ecff] to-[#dbe0f3] min-h-screen text-gray-800">
       <Navbar />
 
       <div className="flex items-center justify-center py-20 px-3 sm:px-6 lg:px-8">
