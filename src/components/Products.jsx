@@ -12,41 +12,47 @@ import RAG from "../assets/RAG.jpg";
 export default function Products() {
   const products = [
     {
-      title: "E-commerce Website for Retail Shops",
+      title: "E-commerce Website ",
       description:
         "A complete online store solution for small and medium retailers with product listings, cart, and payment gateway integration.",
       image: Ecommerce,
+      link: "#",
     },
     {
-      title: "Billing Software for Restaurants",
+      title: "Billing Software ",
       description:
         "An intuitive POS and billing system for restaurants, supporting order management, invoice generation, and sales reports.",
       image: Billing,
+      link: "#",
     },
     {
-      title: "Appointment Booking Software for Doctors",
+      title: "Appointment Booking Software ",
       description:
         "A seamless scheduling and appointment management platform for clinics and hospitals with patient reminders and analytics.",
       image: Booking,
       special: true,
+      link: "#",
     },
     {
-      title: "Online Payment Portal for Businesses",
+      title: "Online Payment Portal ",
       description:
         "A secure online payment platform for educational institutions, enabling easy fee payments, receipts, and admin dashboards.",
       image: Payment,
+      link: "#",
     },
     {
-      title: "Smart ERP for Shops",
+      title: "Smart ERP ",
       description:
         "An integrated ERP system designed for retail and wholesale businesses to manage inventory, billing, accounting, and customer data seamlessly.",
       image: ERP,
+      link: "#",
     },
     {
-      title: "AI RAG Chat Assistant for Businesses",
+      title: "AI RAG Chat Assistant ",
       description:
-        "An advanced AI-powered chat assistant using Retrieval-Augmented Generation to provide instant, context-aware responses and automate business communication.",
+       " AI-powered chat assistant with Retrieval-Augmented Generation that provides instant, context-aware replies for business automation",
       image: RAG,
+      link: "#",
     },
   ];
 
@@ -93,6 +99,17 @@ export default function Products() {
                 {product.title}
               </h3>
               <p className="text-gray-600 text-sm">{product.description}</p>
+
+              {/* ⭐ NEW BUTTON ADDED HERE */}
+              <a
+                href={product.link}
+                className="mt-5 inline-block w-full py-2 text-center text-white font-semibold rounded-lg
+                bg-gradient-to-r from-[#7a6410] via-[#b18e2a] to-[#d4af37]
+                hover:brightness-110 hover:shadow-[0_0_12px_rgba(212,175,55,0.35)]
+                transition-all duration-300"
+              >
+                Click to View Work
+              </a>
             </div>
           </div>
         ))}
@@ -100,4 +117,3 @@ export default function Products() {
     </div>
   );
 }
-

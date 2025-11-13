@@ -25,7 +25,7 @@ export default function About() {
           />
 
           <motion.h1
-            className="text-5xl sm:text-6xl font-extrabold mt-6 tracking-tight font-[Poppins] bg-gradient-to-r from-[#4A0E0E] via-[#7B1E1E] to-[#B03030] text-transparent bg-clip-text"
+            className="text-5xl sm:text-6xl font-extrabold mt-6 tracking-tight font-[Poppins] bg-gradient-to-r from-[#4A0E0E] via-[#7B1E1E] to-[#B03030] text-transparent bg-clip-text tracking-tight leading-tight"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -72,33 +72,36 @@ export default function About() {
         <section className="mt-24 py-20 bg-white rounded-2xl shadow-md">
           <div className="max-w-6xl mx-auto px-6 space-y-24">
 
-            {/* MISSION — Image Right (SWAPPED ORDER FOR MOBILE) */}
+            {/* MISSION SECTION */}
             <motion.div
               className="grid md:grid-cols-2 gap-10 items-center"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              {/* ⭐ 1. Right Image (Now comes first for mobile, but remains right on desktop) */}
+              {/* IMAGE (Right on Desktop) */}
               <motion.div
                 initial={{ x: 60, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="rounded-3xl overflow-hidden shadow-1xl md:order-2" // <-- Added md:order-2 to push it to the right on desktop
+                className="rounded-3xl overflow-hidden shadow-1xl md:order-2"
               >
                 <img
                   src={missionImg}
                   alt="Mission"
-                  className="w-full h-auto max-h-60 object-cover md:h-[380px]"
+                  className="
+                    w-full h-auto max-h-60 object-cover
+                    md:object-contain md:h-auto md:max-h-none md:w-full
+                  "
                 />
               </motion.div>
-              
-              {/* ⭐ 2. Left Content (Now comes second for mobile, but remains left on desktop) */}
+
+              {/* CONTENT (Left on Desktop) */}
               <motion.div
                 initial={{ x: -60, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="space-y-5 md:order-1" // <-- Added md:order-1 to keep it on the left on desktop
+                className="space-y-5 md:order-1"
               >
                 <h3 className="text-4xl font-extrabold font-[Poppins] text-[#7B1E1E]">
                   Our Mission
@@ -130,17 +133,16 @@ export default function About() {
                   ))}
                 </div>
               </motion.div>
-
             </motion.div>
 
-            {/* VISION — Image Left (NO CHANGE) */}
+            {/* VISION SECTION */}
             <motion.div
               className="grid md:grid-cols-2 gap-10 items-center"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              {/* Left Image (Stays first in HTML, so it's above text on mobile and left on desktop) */}
+              {/* IMAGE LEFT */}
               <motion.div
                 initial={{ x: -60, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -150,11 +152,14 @@ export default function About() {
                 <img
                   src={visionImg}
                   alt="Vision"
-                  className="w-full h-auto max-h-60 object-cover md:h-[380px]"
+                  className="
+                    w-full h-auto max-h-60 object-cover
+                    md:object-contain md:h-auto md:max-h-none md:w-full
+                  "
                 />
               </motion.div>
 
-              {/* Right Content */}
+              {/* CONTENT RIGHT */}
               <motion.div
                 initial={{ x: 60, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -196,7 +201,9 @@ export default function About() {
           </div>
         </section>
 
-        {/* BRAND VALUES */}
+        {/* The rest stays unchanged */}
+        {/* BRAND VALUES, FUTURE SECTION, JOURNEY… (NO CHANGES) */}
+
         <section className="max-w-6xl mx-auto mt-24">
           <motion.h2
             className="text-4xl font-bold text-center font-[Poppins] tracking-tight"
@@ -208,7 +215,6 @@ export default function About() {
           </motion.h2>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mt-14">
-
             {[
               { title: "Creativity", desc: "We design with passion and imagination.", icon: "🎨" },
               { title: "Innovation", desc: "We explore new technologies to solve real challenges.", icon: "💡" },
@@ -234,7 +240,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* FUTURE + AI SECTION */}
         <section className="max-w-6xl mx-auto mt-24 text-center">
           <motion.h2
             className="text-4xl font-bold font-[Poppins] tracking-tight"
@@ -257,7 +262,6 @@ export default function About() {
           </motion.p>
         </section>
 
-        {/* JOURNEY */}
         <section className="max-w-6xl mx-auto mt-24">
           <motion.h2
             className="text-4xl font-bold text-center font-[Poppins] tracking-tight"

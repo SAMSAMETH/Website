@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
+    "emailjs-com": "^3.2.0",
     "firebase": "^12.5.0",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.553.0",

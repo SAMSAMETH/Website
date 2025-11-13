@@ -2,6 +2,8 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 import { Linkedin, Instagram, Twitter } from "lucide-react"; // ✅ Importing icons
 import { FaXTwitter } from "react-icons/fa6";
+import emailjs from "emailjs-com";
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,17 +19,43 @@ export default function ContactPage() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
-      alert("⚠️ Please fill in all required fields!");
-      return;
-    }
+  if (!formData.name || !formData.email || !formData.message) {
+    alert("⚠️ Please fill in all required fields!");
+    return;
+  }
 
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+  const templateParams = {
+    name: formData.name,
+    email: formData.email,
+    subject: formData.subject || "No Subject",
+    message: formData.message,
   };
+
+  emailjs
+    .send(
+      "service_b7badle",      // ✔ Your EmailJS service ID
+      "template_fz8oklc",     // ✔ Use your CONTACT template ID
+      templateParams,
+      "p8Zjd2LHoDeNOX-VE"     // ✔ Your public key
+    )
+    .then(() => {
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 3000);
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    })
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
+      alert("❌ Failed to send message. Try again.");
+    });
+};
 
   return (
     <div className="font-sans bg-gradient-to-b from-[#faf2f5] via-[#f1ecff] to-[#dbe0f3] min-h-screen text-gray-800">

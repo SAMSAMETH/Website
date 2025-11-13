@@ -8,6 +8,8 @@ import Contact from "./components/Contact";
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import HomePage from './components/HomePage';
+import Careers from './components/Careers';
+import JobApply from './components/JobApply';
 
 export default function App() {
   return (
@@ -19,7 +21,8 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
-
+        <Route path="/careers" element={<Careers />}/>
+        <Route path="/careers/:id" element={<JobApply />}/>
         {/* Authentication */}
         <Route path="/signup" element={<SignUp />}/>
         <Route path="/signin" element={<SignIn />}/>
@@ -39,3 +42,10 @@ export default function App() {
   );
 }
 
+//emailjs
+     // .sendForm(
+      //  "service_b7badle",     // ⭐ replace
+      //  "template_d6hlhy1",    // ⭐ replace
+      //  form,
+      //  "p8Zjd2LHoDeNOX-VE"      // ⭐ replace
+    //  )

@@ -31,6 +31,7 @@ export default function Navbar() {
     { name: "Services", path: "/services" },
     { name: "Products", path: "/products" },
     { name: "Contact", path: "/contact" },
+    {name:"Careers",path:"/careers"}
   ];
 
   return (
