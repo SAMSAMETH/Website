@@ -79,7 +79,7 @@ export default function SignUp() {
           <p className="text-center text-gray-500 mb-6 text-sm sm:text-base">
             Join{" "}
             <span className="font-semibold bg-gradient-to-r from-[#4A0E0E] via-[#7B1E1E] to-[#B03030] text-transparent bg-clip-text tracking-tight leading-tight">
-              Ziterate Solutions
+              Zercadia
             </span>{" "}
             and evolve innovation.
           </p>

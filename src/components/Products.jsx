@@ -1,4 +1,13 @@
 import Navbar from "./Navbar";
+import BlurImage from "./BlurImage";
+
+// Images
+import Ecommerce from "../assets/Ecommerce.jpg";
+import Billing from "../assets/Billing.jpg";
+import Booking from "../assets/Bookings.jpg";
+import Payment from "../assets/payment.jpg";
+import ERP from "../assets/ERP.jpg";
+import RAG from "../assets/RAG.jpg";
 
 export default function Products() {
   const products = [
@@ -6,37 +15,38 @@ export default function Products() {
       title: "E-commerce Website for Retail Shops",
       description:
         "A complete online store solution for small and medium retailers with product listings, cart, and payment gateway integration.",
-      image: "/src/assets/Ecommerce.jpg",
+      image: Ecommerce,
     },
     {
       title: "Billing Software for Restaurants",
       description:
         "An intuitive POS and billing system for restaurants, supporting order management, invoice generation, and sales reports.",
-      image: "/src/assets/Billing.jpg",
+      image: Billing,
     },
     {
       title: "Appointment Booking Software for Doctors",
       description:
         "A seamless scheduling and appointment management platform for clinics and hospitals with patient reminders and analytics.",
-      image: "/src/assets/Bookings.jpg",
+      image: Booking,
+      special: true,
     },
     {
       title: "Online Payment Portal for Businesses",
       description:
         "A secure online payment platform for educational institutions, enabling easy fee payments, receipts, and admin dashboards.",
-      image: "/src/assets/payment.jpg",
+      image: Payment,
     },
     {
       title: "Smart ERP for Shops",
       description:
         "An integrated ERP system designed for retail and wholesale businesses to manage inventory, billing, accounting, and customer data seamlessly.",
-      image: "/src/assets/ERP.jpg",
+      image: ERP,
     },
     {
       title: "AI RAG Chat Assistant for Businesses",
       description:
         "An advanced AI-powered chat assistant using Retrieval-Augmented Generation to provide instant, context-aware responses and automate business communication.",
-      image: "/src/assets/RAG.jpg",
+      image: RAG,
     },
   ];
 
@@ -44,7 +54,7 @@ export default function Products() {
     <div className="font-sans bg-gradient-to-b from-[#faf2f5] via-[#f1ecff] to-[#dbe0f3] min-h-screen text-gray-800">
       <Navbar />
 
-      {/* 🏷️ Page Header */}
+      {/* Header */}
       <div className="text-center pt-32 pb-16 px-6">
         <h1 className="text-3xl md:text-4xl font-extrabold mb-6">
           <span className="text-black">Our </span>
@@ -58,31 +68,26 @@ export default function Products() {
         </p>
       </div>
 
-      {/* 🧩 Product Cards */}
+      {/* Product Cards */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 pb-20">
         {products.map((product, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden transition-transform duration-300 border-t-4 border-[#b18e2a] hover:scale-105"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden
+                       transition-transform duration-300 border-t-4 border-[#b18e2a] hover:scale-105"
           >
-            {/* 🖼️ Product Image */}
-            <div
-              className={`w-full h-56 overflow-hidden flex justify-center items-center ${
-                product.special ? "bg-[#f9f9f9]" : ""
-              }`}
-            >
-              <img
+            {/* Blur-up Image */}
+            <div className="w-full h-56 overflow-hidden">
+              <BlurImage
                 src={product.image}
                 alt={product.title}
                 className={`w-full h-full ${
-                  product.special
-                    ? "object-contain scale-95" // ✅ Adjusted only for Appointment Booking image
-                    : "object-cover hover:scale-110"
-                } transition-transform duration-500`}
+                  product.special ? "object-contain" : "object-cover"
+                }`}
               />
             </div>
 
-            {/* 📄 Content */}
+            {/* Content */}
             <div className="p-6 text-center">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {product.title}
@@ -95,3 +100,4 @@ export default function Products() {
     </div>
   );
 }
+
