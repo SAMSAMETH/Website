@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import welcomeImg from "../assets/welcome.jpg";
+import welcomeImg from "../assets/Welcome.jpg";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
